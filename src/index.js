@@ -74,5 +74,5 @@ app.listen(  process.env.PORT || 8080 , (err) => {
 //  app.listen(   8080 , (err) => {
   err
     ? console.log(err)
-    : console.log(`Server started on port ${8080} ⚡️`);
+    : console.log(`Server started on port ${ process.env.PORT} ⚡️`);
 });
