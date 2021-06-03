@@ -23,15 +23,15 @@ router.get("/send_mail", async (req, res) => {
     service: 'gmail',
     host: 'smtp.gmail.com',
     auth: {
-      user: '',
-      pass: ''
+      user: 'gokhmantest@gmail.com',
+      pass: 'printer10$'
     }
   }));
   
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
-            from: 'ruzgokhman@gmail.com',
+            from: 'gokhmantest@gmail.com',
             to: to,
             subject: subject,
             text: text
