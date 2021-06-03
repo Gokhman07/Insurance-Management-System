@@ -23,8 +23,8 @@ router.get("/send_mail", async (req, res) => {
     service: 'gmail',
     host: 'smtp.gmail.com',
     auth: {
-      user: 'ruzgokhman@gmail.com',
-      pass: 'printer10$'
+      user: '',
+      pass: ''
     }
   }));
   
