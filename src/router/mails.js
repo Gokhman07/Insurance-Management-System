@@ -22,6 +22,7 @@ router.get("/send_mail", async (req, res) => {
   var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    port: 465,
     auth: {
       user: 'ruzgokhman@gmail.com',
       pass: 'printer10$'
