@@ -179,7 +179,7 @@ router.get('/auth', (req, res) => {
     res.json(ok(req.cookies.data))
 });
 
-router.get("/login_with_mail", async (req, res) => {
+router.post("/login_with_mail", async (req, res) => {
    const {username, email}=req.body
     const exchange = await Pensioners.findOne({
         attributes: ['id'],
@@ -274,7 +274,7 @@ router.put("/logout", async (req, res) => {
     res.send(newauthor);
 });
 
-router.get("/code_check", async (req, res) => {
+router.post("/code_check", async (req, res) => {
 
     const {username,code} = req.body;
     
