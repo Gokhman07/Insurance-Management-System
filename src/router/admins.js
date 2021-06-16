@@ -72,7 +72,7 @@ router.get('/auth', (req, res) => {
     res.json(ok(req.cookies.data))
 });
 
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
     const exchange = await Admins.findOne({
         attributes: ['id','type'],
         where: {
