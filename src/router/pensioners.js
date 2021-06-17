@@ -225,7 +225,7 @@ console.log(exchange)
         host: 'smtp.gmail.com',
         auth: {
           user: 'ruzgokhman@gmail.com',
-          pass: 'printer10$'
+          pass: 'Printer21$'
         }
       }));
       let messageOptions = {
