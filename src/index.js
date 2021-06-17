@@ -33,7 +33,7 @@ const subcategoires=require('./router/subcategories')
 const app = express();
 app.use(cookieParser())
 app.use(cors({
-  origin: "*"
+  origin: "*",
   credentials: false}));
 app.use(compression());
 app.use(express.static('static'))
