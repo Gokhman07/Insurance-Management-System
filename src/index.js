@@ -30,6 +30,7 @@ const admins=require('./router/admins')
 const mail=require('./router/mails')
 const templates=require('./router/templates')
 const subcategoires=require('./router/subcategories')
+const full_progrm_info=require('./router/full_progrm_info')
 const app = express();
 app.use(cookieParser())
 app.use(cors({
@@ -54,7 +55,7 @@ app.use("/pension_funds",pension_funds)
 app.use("/insur_pensioners",insur_pensioners)
 app.use("/education_funds",education_funds)
 app.use("/family_risks",family_risks)
-
+app.use("/full_progrm_info",full_progrm_info)
 app.use('/work_incapacity_insurances',work_incapacity_insurances)
 app.use('/mortgages',mortgages)
 app.use("/savings",deposit_savings)
