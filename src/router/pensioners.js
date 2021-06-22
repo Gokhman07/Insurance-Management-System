@@ -15,7 +15,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
 router.get("/names_list", async (req, res) => {
     const names = await Pensioners.findAll({
-        attributes: ['id','username'],
+        attributes: ['id','name', 'lastname'],
     });
     res.send(names);
 
