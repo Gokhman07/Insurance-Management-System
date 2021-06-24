@@ -34,10 +34,10 @@ router.post('/update', async (req, res) => {
     );
     res.json(ok(fund))
 })
-router.post("/new", async req => {
-    console.log(req.body)
-    await EduFunds.create(req.body)
-});
+router.post("/new", async (req,res)  =>{ await EduFunds.create(req.body)
+res.send("Was added")
+}
+)
 
 router.delete("/delete/:id", async (req, res) => {
     const {id} = req.params;
