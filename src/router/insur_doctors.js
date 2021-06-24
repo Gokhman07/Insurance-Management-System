@@ -46,8 +46,10 @@ router.put('/get_count', async (req, res) => {
     });
     res.json(ok(data))
 })
-
-router.post("/new", async req => await Insur_doctors.create(req.body));
+router.post("/new", async (req,res)  =>{ await Insur_doctors.create(req.body)
+res.send("Was added")
+}
+)
 
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
