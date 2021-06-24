@@ -41,7 +41,10 @@ router.put('/get_count', async (req, res) => {
     res.json(ok(data))
 })
 
-router.post("/new", async req => await Mortgages.create(req.body));
+router.post("/new", async (req,res)  =>{ await Mortgages.create(req.body)
+res.send("Was added")
+}
+);
 
 router.put("/update", async (req, res) => {
     const {
