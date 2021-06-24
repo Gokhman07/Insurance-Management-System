@@ -30,7 +30,10 @@ router.put('/get_count', async (req, res) => {
     res.json(ok(data))
 })
 
-router.post("/new", async req => await Loans.create(req.body));
+router.post("/new", async (req,res)  =>{ await Loans.create(req.body)
+res.send("Was added")
+}
+);
 
 
 router.delete("/delete/:id", async (req, res) => {
