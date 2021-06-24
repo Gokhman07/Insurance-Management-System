@@ -33,7 +33,10 @@ router.delete("/delete/:id", async (req, res) => {
     res.send(id);
 });
 
-router.post("/new", async req => await Insur_lives.create(req.body));
+router.post("/new", async (req,res)  =>{ await Insur_lives.create(req.body)
+res.send("Was added")
+}
+);
 router.put('/get_count', async (req, res) => {
     const {id_pensioner} = req.body
     const data = await Insur_lives.count({
