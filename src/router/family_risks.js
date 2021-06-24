@@ -37,7 +37,10 @@ router.delete("/delete/:id", async (req, res) => {
     await Family_risks.destroy({where: {id},});
     res.json(ok(id));
 });
-router.post("/new", async req => await Family_risks.create(req.body));
+router.post("/new", async (req,res)  =>{ await Family_risks.create(req.body)
+res.send("Was added")
+}
+)
 
 
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
