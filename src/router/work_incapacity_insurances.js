@@ -62,8 +62,10 @@ router.put("/update", async (req, res) => {
         {where  : {id}});
     res.json(ok())
 });
-
-router.post("/new", async req => await Work_incapacity_insurances.create(req.body));
+router.post("/new", async (req,res)  =>{ await Work_incapacity_insurances.create(req.body)
+res.send("Was added")
+}
+);
 
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
