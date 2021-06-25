@@ -122,7 +122,7 @@ router.get("/personal_info/:id", async (req, res) => {
             },
 
             attributes: ['name', 'lastname', 'passport_number','marital_id', 'occupation', 'belong_comp',
-                'company', 'birth_date', 'card_number', 'pens_age', 'id_empl_status', 'occupation','belong_comp']
+                'company', 'birth_date', 'card_number', 'pens_age', 'id_empl_status', 'occupation','belong_comp','couple_id']
         },
     );
     res.send(info);});
