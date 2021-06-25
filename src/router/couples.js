@@ -12,7 +12,7 @@ router.get("/couples_list", async (req, res) => {
 
 
 });
-router.get("/get_info", async (req, res) => {
+router.post("/get_info", async (req, res) => {
     const {id} = req.body
     
     const info = await Couples.findAll({
