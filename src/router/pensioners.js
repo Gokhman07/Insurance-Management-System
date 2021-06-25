@@ -357,7 +357,10 @@ router.delete("/delete/:id", islogin, async (req, res) => {
 });
 
 
-router.post("/new", async req => await Pensioners.create(req.body));
+router.post("/new", async (req,res)  =>{ await Pensioners.create(req.body)
+res.send("Was added")
+}
+)
 
 
 router.post('/update',async (req,res) => {
