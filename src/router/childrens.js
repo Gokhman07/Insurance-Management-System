@@ -4,7 +4,7 @@ const Children= require("../models/childrens");
 
 const router = Router();
 
-router.get("/get_children", async (req, res) => {
+router.post("/get_children", async (req, res) => {
     const {couple_id} = req.body
     
     const info = await Children.findAll({
