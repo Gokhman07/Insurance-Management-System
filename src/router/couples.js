@@ -43,8 +43,10 @@ router.delete("/delete/:id", async (req, res) => {
     await Couples.destroy({where: {id},});
     res.json(ok(id));
 });
-router.post("/new", async req => await Couples.create(req.body));
-
+router.post("/new", async (req,res)  =>{ await Couples.create(req.body)
+res.send("Was added")
+}
+)
 
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
