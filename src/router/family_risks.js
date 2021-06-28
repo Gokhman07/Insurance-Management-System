@@ -23,7 +23,7 @@ router.put('/get_count', async (req, res) => {
 
 router.post('/update',async (req,res) => {
     const fund = await Family_risks.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id: req.body.id
