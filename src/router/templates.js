@@ -16,7 +16,7 @@ router.post('/get',async (req,res) => {
 
 router.post('/update',async (req,res) => {
     const templete = await Templetes.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id: req.body.id
