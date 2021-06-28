@@ -22,7 +22,7 @@ router.post('/get',async (req,res) => {
 
 router.post('/update',async (req,res) => {
     const fund = await Insur_doctors.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id_pensioner: req.body.id
