@@ -57,7 +57,7 @@ router.put("/update", async (req, res) => {
     console.log("UPDATE")
     const {
         id, title, monthly_compensation_amount, professional_definition
-    } = req.body.data;
+    } = req.body;
     await Work_incapacity_insurances.update({title, monthly_compensation_amount, professional_definition},
         {where  : {id}});
     res.json(ok())
