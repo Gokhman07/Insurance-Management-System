@@ -47,7 +47,7 @@ router.get("/get_info", async (req, res) => {
   });
   router.post('/update',async (req,res) => {
     const child = await Admins.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id: req.body.id
