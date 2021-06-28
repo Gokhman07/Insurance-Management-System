@@ -25,7 +25,7 @@ router.put('/get_count', async (req, res) => {
 })
 router.post('/update', async (req, res) => {
     const fund = await EduFunds.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id_pensioner: req.body.id
