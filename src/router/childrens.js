@@ -21,7 +21,7 @@ router.post("/get_children", async (req, res) => {
 
 router.post('/update',async (req,res) => {
     const child = await Children.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id: req.body.id
