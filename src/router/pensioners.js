@@ -365,7 +365,7 @@ res.send("Was added")
 
 router.post('/update',async (req,res) => {
     const pensioner = await Pensioners.update(
-        req.body.data,
+        req.body,
         {
             where: {
                 id: req.body.id
