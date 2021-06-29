@@ -5,7 +5,7 @@ const router = Router();
 
 
 router.post('/get',async (req,res) => {
-    const {id_pensioner} = req.body
+
     const data = await Templetes.findAll({
         
         attributes : ['id','name','templete']});
