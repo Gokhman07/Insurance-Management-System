@@ -30,8 +30,10 @@ router.delete("/delete/:id", async (req, res) => {
     await Templetes.destroy({where: {id},});
     res.json(ok(id));
 });
-router.post("/new", async req => await Templetes.create(req.body));
-
+router.post("/new", async (req,res)  =>{ await Templetes.create(req.body)
+res.send("Was added")
+}
+);
 
 
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
