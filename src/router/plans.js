@@ -46,6 +46,18 @@ res.send("Was added")
 }
 );
 
+router.post('/update',async (req,res) => {
+    const fund = await Plans.update(
+        req.body,
+        {
+            where: {
+                id_pensioner: req.body.id
+            },
+        }
+    );
+    res.json(ok(fund))
+})
+
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
 module.exports = router
