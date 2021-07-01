@@ -26,7 +26,7 @@ router.post('/update',async (req,res) => {
         req.body,
         {
             where: {
-                id_pensioner: req.body.id
+                id: req.body.id
             },
         }
     );
