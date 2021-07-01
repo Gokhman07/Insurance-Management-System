@@ -46,10 +46,10 @@ res.send("Was added")
 }
 );
 
-router.put("/update", async (req, res) => {
+router.post("/update", async (req, res) => {
     const {
         id, balance_exists, payment_months, years_to_end, title
-    } = req.body.data;
+    } = req.body;
     await Mortgages.update({title, balance_exists, payment_months, years_to_end}, {where: {id}});
     res.json(ok())
 });
