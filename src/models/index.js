@@ -26,8 +26,8 @@ const Subcategories = require('./subcategories')
 Pensioners.hasMany(Plans, { foreignKey: "id_pensioner" });
 Plans.belongsTo(Pensioners, { foreignKey: "id_pensioner" });
 
-Subcategories.hasMany(Plans, { foreignKey: "id_categor" });
-Plans.belongsTo(Subcategories, { foreignKey: "id_categor" });
+//Subcategories.hasMany(Plans, { foreignKey: "id_categor" });
+//Plans.belongsTo(Subcategories, { foreignKey: "id_categor" });
 
 Marit_statuses.hasMany(Pensioners, { foreignKey: "marital_id" });
 Pensioners.belongsTo(Marit_statuses, { foreignKey: "marital_id" });
