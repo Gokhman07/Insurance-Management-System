@@ -46,7 +46,7 @@ router.put('/get_count', async (req, res) => {
     res.json(ok(data))
 })
 
-router.put("/update", async (req, res) => {
+router.post("/update", async (req, res) => {
     const {
         id, monthly_compensation_amount, lump_sum, title
     } = req.body;
