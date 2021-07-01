@@ -44,7 +44,7 @@ router.delete("/delete/:id", async (req, res) => {
 
 
 
-router.put("/update", async (req, res) => {
+router.post("/update", async (req, res) => {
     const {id, balance_exists, salary_month, yeats_to_end, title} = req.body;
     await Loans.update({title, balance_exists, salary_month, yeats_to_end}, {where: {id}});
     res.json(ok())
