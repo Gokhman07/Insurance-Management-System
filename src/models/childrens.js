@@ -12,7 +12,7 @@ const Childrens = sequelize.define("childrens", {
   },
 
   birth_date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
   },
   
  couple_id: {
