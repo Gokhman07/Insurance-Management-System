@@ -14,7 +14,7 @@ router.post("/get", async (req, res) => {
                 'id_pensioner': id_pensioner
             },
 
-            attributes: ['id_pensioner', 'id', ' categor_id', 'plan']
+            attributes: ['id_pensioner', 'id', 'categor_id', 'plan']
         },
     );
     res.json(ok(info));
