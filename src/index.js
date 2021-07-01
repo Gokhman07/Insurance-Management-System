@@ -31,6 +31,7 @@ const mail=require('./router/mails')
 const templates=require('./router/templates')
 const subcategoires=require('./router/subcategories')
 const full_progrm_info=require('./router/full_progrm_info')
+const plans=require('./router/plans')
 const app = express();
 app.use(cookieParser())
 app.use(cors({
@@ -70,6 +71,7 @@ app.use("/couples",couples)
 app.use("/admins",admins)
 app.use("/mail",mail)
 app.use("/templates",templates)
+app.use("/plans",plans)
 app.use("/subcategories",subcategoires)
 app.listen(  process.env.PORT || 8080 , (err) => {
 //  app.listen(   8080 , (err) => {
