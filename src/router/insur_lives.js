@@ -49,7 +49,7 @@ router.put('/get_count', async (req, res) => {
 router.put("/update", async (req, res) => {
     const {
         id, monthly_compensation_amount, lump_sum, title
-    } = req.body.data;
+    } = req.body;
     await Insur_lives.update({title, monthly_compensation_amount, lump_sum}, {where: {id}});
     res.json(ok())
 });
