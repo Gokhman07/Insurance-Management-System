@@ -53,8 +53,8 @@ router.delete("/delete/:id", async (req, res) => {
 
 
 
-router.put("/update", async (req, res) => {
-    console.log("UPDATE")
+router.post("/update", async (req, res) => {
+
     const {
         id, title, monthly_compensation_amount, professional_definition
     } = req.body;
