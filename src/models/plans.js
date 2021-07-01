@@ -14,7 +14,7 @@ const Plans = sequelize.define("plans", {
     type: DataTypes.INTEGER,
   },
   id_categor: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
   },
   
   
