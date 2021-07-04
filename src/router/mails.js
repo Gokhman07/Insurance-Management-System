@@ -25,7 +25,7 @@ router.get("/send_mail", async (req, res) => {
     port: 465,
     auth: {
       user: 'ruzgokhman@gmail.com',
-      pass: 'printer10$'
+      pass: 'Printer21$'
     }
   }));
   
