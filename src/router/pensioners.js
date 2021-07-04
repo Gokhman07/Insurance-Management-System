@@ -180,11 +180,11 @@ router.get('/auth', (req, res) => {
 });
 
 router.post("/login_with_mail", async (req, res) => {
-   const {username, email}=req.body
+   const {passport_number, email}=req.body
     const exchange = await Pensioners.findOne({
         attributes: ['id'],
         where: {
-            username: req.body.username,
+            passport_number: req.body.passport_number,
             mail: req.body.email
         }
     });
@@ -215,7 +215,7 @@ console.log(exchange)
         },
         {
             where: {
-                username: username
+                passport_number: passport_number
                // password: req.body.email
             },
         }
