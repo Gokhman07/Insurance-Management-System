@@ -5,7 +5,7 @@ const schedule = require('node-schedule');
 var smtpTransport = require('nodemailer-smtp-transport');
 const router = Router();
 
-router.get("/send_mail", async (req, res) => {
+router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
   
