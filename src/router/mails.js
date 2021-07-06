@@ -69,7 +69,7 @@ router.put('/update_status', async (req, res) => {
  
 
   await Mails.update({status: status},{where : {id}})
-  res.json(ok(url))
+  res.json(ok("Status is updated"))
 })
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
