@@ -61,7 +61,11 @@ router.delete("/delete/:id", async (req, res) => {
     await Admins.destroy({where: {id},});
     res.json(ok(id));
 });
-router.post("/new", async req => await Admins.create(req.body));
+
+router.post("/new", async (req,res)  =>{ await Admins.create(req.body)
+res.send("Was added")
+}
+)
 
 
 router.get('/auth', (req, res) => {
