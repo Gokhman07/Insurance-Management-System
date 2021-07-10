@@ -28,7 +28,7 @@ router.post("/admin_clients", async (req, res) => {
 
             'group_id': req.body.group_id
         },
-        attributes: ['id','username'],
+        attributes: ['id','name', 'lastname','passport_number'],
     });
     res.send(names);
 
