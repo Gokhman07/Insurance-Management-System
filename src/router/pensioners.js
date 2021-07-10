@@ -21,7 +21,7 @@ router.get("/names_list", async (req, res) => {
 
 
 });
-router.get("/admin_clients", async (req, res) => {
+router.post("/admin_clients", async (req, res) => {
     
     const names = await Pensioners.findAll({
         where: {
