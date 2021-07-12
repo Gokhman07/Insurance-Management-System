@@ -91,7 +91,7 @@ router.post("/login", async (req, res) => {
     }
     const token = jwt.sign(jwtconfig, 'shhhhh')
     if (exchange) {
-        res.cookie('data', {username: req.params.username, id: exchange.dataValues.id, token})
+        res.cookie('data', {username: req.params.username, id: exchange.dataValues.id,type:exchange.dataValues.type, token})
         res.send({
             status: 200, data: {
                 token,
