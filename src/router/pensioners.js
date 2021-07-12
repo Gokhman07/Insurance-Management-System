@@ -283,7 +283,7 @@ router.post("/code_check", async (req, res) => {
         {
             where: {
                 passport_number: username,
-                token:code
+              //  token:code
             },
         }
     );
