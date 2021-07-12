@@ -276,13 +276,13 @@ router.put("/logout", async (req, res) => {
 
 router.post("/code_check", async (req, res) => {
 
-    const {username,code} = req.body;
+    //const {username,code} = req.body;
     console.log(req.body)
     const newauthor = await Pensioners.findOne(
    {  attributes:['id']},
         {
             where: {
-                passport_number: username,
+                passport_number: req.body.username,
               //  token:code
             },
         }
