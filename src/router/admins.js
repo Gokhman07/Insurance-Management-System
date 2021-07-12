@@ -8,7 +8,7 @@ const router = Router();
 
 router.get("/admins_list", async (req, res) => {
     const list = await Admins.findAll({
-        attributes: ['id','name','lastname'],
+        attributes: ['id','name','lastname','type'],
     });
     res.send(list);
 
