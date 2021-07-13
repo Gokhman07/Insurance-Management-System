@@ -78,9 +78,12 @@ router.post("/edit_mail", async (req, res) => {
     const data = await Mails.findAll({
           where: {id: req.body.id,},
           attributes : ['label']});
-    res.send(data[0]['label'])
+   
+   
   
-
+var my_job = schedule.scheduledJobs[ data[0]['label']];
+my_job.cancel();
+res.send(data[0]['label'])
 });
 
 router.post("/contact_us", async (req, res) => {
