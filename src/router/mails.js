@@ -54,6 +54,26 @@ router.post("/send_mail", async (req, res) => {
 
 });
 
+router.post("/edit_mail", async (req, res) => {
+ //   const {  id_pensioner,to,subject,text,date_info} = req.body;
+   // status="תהליך"
+  
+   // const date = new Date(2021, 04, 23, 23, 28, 0);
+  
+//   const date = new Date(date_info);
+
+  
+  // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
+    let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+    const data = await Mails.findAll({
+          where: {id: id,},
+          attributes : ['label']});
+    res.send(data)
+  
+
+});
 
 router.post("/contact_us", async (req, res) => {
     const {  name,mail,subject,text, number} = req.body;
@@ -109,9 +129,9 @@ router.delete("/delete/:id", async (req, res) => {
 });
 router.post('/get',async (req,res) => {
   const {id_pensioner} = req.body
-  const data = await Mails.findAll({
-      where: {id_pensioner: id_pensioner,},
-      attributes : ['subject','text','status','date','id']});
+      const data = await Mails.findAll({
+          where: {id_pensioner: id_pensioner,},
+          attributes : ['subject','text','status','date','id']});
   res.json(ok(data))
 })
 router.put('/update_status', async (req, res) => {
