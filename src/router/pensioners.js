@@ -276,7 +276,7 @@ router.put("/logout", async (req, res) => {
 
 router.post("/code_check", async (req, res) => {
 
-    //const {username,code} = req.body;
+    const {username,code} = req.body;
     console.log(req.body.username)
    
  const newauthor = await Pensioners.findOne(
