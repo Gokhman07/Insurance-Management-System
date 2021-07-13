@@ -82,7 +82,7 @@ router.post("/contact_us", async (req, res) => {
        // console.log('The world is going to end today.');
         let messageOptions = {
             from: 'ruzgokhman@gmail.com',
-            to: 'ruzgokhman@gmail.com',
+            to: 'msteiner@qualiteamdev.com',
             subject: subject.toString(),
             text:text+"\n\n"+number+" :מספר טלפון\n"+mail+" :אימייל\n"+name+" :שם"
             //text:text.toString()
