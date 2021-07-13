@@ -28,6 +28,7 @@ router.post("/send_mail", async (req, res) => {
       pass: 'Printer21$'
     }
   }));
+    console.log(subject)
   
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
