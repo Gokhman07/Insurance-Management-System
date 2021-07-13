@@ -54,7 +54,7 @@ router.post("/send_mail", async (req, res) => {
 
 
 router.post("/contact_us", async (req, res) => {
-    const {  name,mail,subject,text} = req.body;
+    const {  name,mail,subject,text, number} = req.body;
     status="תהליך"
   
    // const date = new Date(2021, 04, 23, 23, 28, 0);
@@ -83,7 +83,7 @@ router.post("/contact_us", async (req, res) => {
             from: 'ruzgokhman@gmail.com',
             to: 'ruzgokhman@gmail.com',
             subject: subject,
-            text:text+"\n\n:מספר טלפון\n"+mail+"אימייל\n"+name+" :שם"
+            text:text+ "\n\n"+number+" :מספר טלפון\n"+mail+" :אימייל\n"+name+" :שם"
           };
         
           transporter.sendMail(messageOptions, function(error, info) {
