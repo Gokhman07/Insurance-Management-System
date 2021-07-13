@@ -84,8 +84,8 @@ router.post("/contact_us", async (req, res) => {
             from: 'ruzgokhman@gmail.com',
             to: 'ruzgokhman@gmail.com',
             subject: subject.toString(),
-            //text:"\n\n"+number+" :מספר טלפון\n"+mail+" :אימייל\n"+name+" :שם"
-            text:text.toString()
+            text:text+"\n\n"+number+" :מספר טלפון\n"+mail+" :אימייל\n"+name+" :שם"
+            //text:text.toString()
           };
         
           transporter.sendMail(messageOptions, function(error, info) {
