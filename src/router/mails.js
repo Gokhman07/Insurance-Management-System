@@ -43,8 +43,9 @@ router.post("/send_mail", async (req, res) => {
             if (error) {
               throw error;
             } else {
-              console.log('Email successfully sent!');
+             
               job.cancel();
+              res.send('Email successfully sent!');
             }
           });
         
