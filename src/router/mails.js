@@ -78,7 +78,7 @@ router.post("/edit_mail", async (req, res) => {
     const data = await Mails.findAll({
           where: {id: req.body.id,},
           attributes : ['label']});
-    res.send(data)
+    res.send(data[0]['label'])
   
 
 });
