@@ -28,17 +28,7 @@ router.post("/send_mail", async (req, res) => {
       pass: 'Printer21$'
     }
   }));
-    console.log(subject)
-      var jobList = schedule.scheduledJobs;
     
-   var arrry=[];
-        for(jobName in jobList){
-        arrry.push(jobName)
-        //  eval(job1+'.cancel()');
-        }
-    label=arrry[arrry.length-1];
-        
-await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
@@ -59,6 +49,17 @@ await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
           });
         
         });
+    console.log(subject)
+      var jobList = schedule.scheduledJobs;
+    
+   var arrry=[];
+        for(jobName in jobList){
+        arrry.push(jobName)
+        //  eval(job1+'.cancel()');
+        }
+    label=arrry[arrry.length-1];
+        
+await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
 
 });
 
