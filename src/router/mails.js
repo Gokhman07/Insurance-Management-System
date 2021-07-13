@@ -80,7 +80,7 @@ router.post("/edit_mail", async (req, res) => {
           attributes : ['label']});
    
    
-
+  console.log(schedule.scheduledJobs[ data[0]['label']])
     schedule.scheduledJobs[ data[0]['label']].cancel()
     await Mails.destroy({where: {id},});
 
