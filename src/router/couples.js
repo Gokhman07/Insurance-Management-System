@@ -27,6 +27,22 @@ router.post("/get_info", async (req, res) => {
   
   
   });
+
+router.post("/get_by_title", async (req, res) => {
+    const {title} = req.body
+    
+    const info = await Couples.findAll({
+        where: {title:title},
+  
+  
+      
+     attributes: ['id','title',]
+  },
+  );
+  res.send(info);
+  
+  
+  });
   router.post('/update',async (req,res) => {
     const child = await Couples.update(
         req.body,
