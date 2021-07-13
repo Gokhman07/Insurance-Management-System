@@ -63,7 +63,7 @@ await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
 });
 
 router.post("/edit_mail", async (req, res) => {
- //   const {  id_pensioner,to,subject,text,date_info} = req.body;
+    const {  id_pensioner,to,subject,text,date_info} = req.body;
    // status="תהליך"
   
    // const date = new Date(2021, 04, 23, 23, 28, 0);
@@ -80,12 +80,65 @@ router.post("/edit_mail", async (req, res) => {
           attributes : ['label']});
    
    
-  
-//var my_job = schedule.scheduledJobs[ data[0]['label']];
-    console.log(schedule.scheduledJobs[ data[0]['label']])
-    schedule.scheduledJobs[ data[0]['label']].cancel()
 
+    schedule.scheduledJobs[ data[0]['label']].cancel()
+    await Mails.destroy({where: {id},});
 res.send(data[0]['label'])
+    
+    
+     status="תהליך"
+  
+   // const date = new Date(2021, 04, 23, 23, 28, 0);
+  
+   const date = new Date(date_info);
+
+  
+  // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
+    let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+
+  var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    auth: {
+      user: 'ruzgokhman@gmail.com',
+      pass: 'Printer21$'
+    }
+  }));
+    console.log(subject)
+  
+    const job = schedule.scheduleJob(date, function(){
+       // console.log('The world is going to end today.');
+        let messageOptions = {
+            from: 'ruzgokhman@gmail.com',
+            to: to,
+            subject: subject,
+            text: text
+          };
+        
+          transporter.sendMail(messageOptions, function(error, info) {
+            if (error) {
+              throw error;
+            } else {
+             
+              job.cancel();
+              res.send('Email successfully sent!');
+            }
+          });
+        
+        });
+    var jobList = schedule.scheduledJobs;
+    
+   var arrry=[];
+        for(jobName in jobList){
+        arrry.push(jobName)
+        //  eval(job1+'.cancel()');
+        }
+    label=arrry[arrry.length-1];
+        
+await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
 });
 
 router.post("/contact_us", async (req, res) => {
