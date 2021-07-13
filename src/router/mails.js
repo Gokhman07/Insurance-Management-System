@@ -29,7 +29,16 @@ router.post("/send_mail", async (req, res) => {
     }
   }));
     console.log(subject)
-  
+      var jobList = schedule.scheduledJobs;
+    
+   var arrry=[];
+        for(jobName in jobList){
+        arrry.push(jobName)
+        //  eval(job1+'.cancel()');
+        }
+    label=arrry[arrry.length-1];
+        
+await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
@@ -50,16 +59,7 @@ router.post("/send_mail", async (req, res) => {
           });
         
         });
-    var jobList = schedule.scheduledJobs;
-    
-   var arrry=[];
-        for(jobName in jobList){
-        arrry.push(jobName)
-        //  eval(job1+'.cancel()');
-        }
-    label=arrry[arrry.length-1];
-        
-await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
+
 });
 
 router.post("/edit_mail", async (req, res) => {
