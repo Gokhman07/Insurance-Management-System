@@ -9,9 +9,9 @@ router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
   
-   // const date = new Date(2021, 04, 23, 23, 28, 0);
+ //   const date = new Date(2021, 07, 14, 00, 30, 0);
   
-   const date = new Date(date_info);
+  const date = new Date(date_info);
 
   
   // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
@@ -49,7 +49,7 @@ router.post("/send_mail", async (req, res) => {
           });
         
         });
-    console.log(subject)
+
       var jobList = schedule.scheduledJobs;
     
    var arrry=[];
