@@ -14,7 +14,7 @@ router.post("/send_mail", async (req, res) => {
    const date = new Date(date_info);
 
   
-   await Mails.create({  id_pensioner,subject,text,date: date_info,status});
+  // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
     let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
@@ -81,7 +81,8 @@ router.post("/edit_mail", async (req, res) => {
    
    
   
-var my_job = schedule.scheduledJobs[ data[0]['label']];
+//var my_job = schedule.scheduledJobs[ data[0]['label']];
+    var my_job = schedule.scheduledJobs[ '<Anonymous Job 2 2021-07-13T20:01:47.133Z>']
 my_job.cancel();
 res.send(data[0]['label'])
 });
