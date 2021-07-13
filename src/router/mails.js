@@ -98,7 +98,6 @@ router.post("/contact_us", async (req, res) => {
         });
         
 
-});
 
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
