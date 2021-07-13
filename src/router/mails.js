@@ -83,7 +83,7 @@ router.post("/edit_mail", async (req, res) => {
 
     schedule.scheduledJobs[ data[0]['label']].cancel()
     await Mails.destroy({where: {id},});
-res.send(data[0]['label'])
+
     
     
      status="תהליך"
