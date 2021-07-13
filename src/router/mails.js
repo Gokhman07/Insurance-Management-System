@@ -76,7 +76,7 @@ router.post("/edit_mail", async (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
     const data = await Mails.findAll({
-          where: {id: id,},
+          where: {id: req.body.id,},
           attributes : ['label']});
     res.send(data)
   
