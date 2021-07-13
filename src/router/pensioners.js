@@ -278,14 +278,16 @@ router.post("/code_check", async (req, res) => {
 
     //const {username,code} = req.body;
     console.log(req.body.username)
-    const newauthor = await Pensioners.findOne(
-   {  attributes:['id']},
-        {
+   
+ const newauthor = await Pensioners.findOne(
+      {  
             where: {
-                passport_number: 1213,
-              //  token:code
+                passport_number: username,
+                token:code
             },
-        }
+    attributes:['id']},
+     
+        
     );
 
     res.send(newauthor);
