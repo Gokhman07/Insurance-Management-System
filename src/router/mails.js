@@ -83,8 +83,8 @@ router.post("/edit_mail", async (req, res) => {
   
 //var my_job = schedule.scheduledJobs[ data[0]['label']];
     console.log(schedule.scheduledJobs)
-    var my_job = schedule.scheduledJobs[ data[0]['label']]
-my_job.cancel();
+    schedule.scheduledJobs[ data[0]['label']].cancel()
+
 res.send(data[0]['label'])
 });
 
