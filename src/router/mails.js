@@ -83,7 +83,7 @@ router.post("/edit_mail", async (req, res) => {
   
 //var my_job = schedule.scheduledJobs[ data[0]['label']];
     console.log(schedule.scheduledJobs)
-    var my_job = schedule.scheduledJobs[ '<Anonymous Job 2 2021-07-13T20:01:47.133Z>']
+    var my_job = schedule.scheduledJobs[ data[0]['label']]
 my_job.cancel();
 res.send(data[0]['label'])
 });
