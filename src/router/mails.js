@@ -52,6 +52,54 @@ router.post("/send_mail", async (req, res) => {
 
 });
 
+
+router.post("/contact_us", async (req, res) => {
+    const {  name,mail,subject,text} = req.body;
+    status="תהליך"
+  
+   // const date = new Date(2021, 04, 23, 23, 28, 0);
+  
+  
+
+  
+ ;
+    let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+
+  var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    auth: {
+      user: 'ruzgokhman@gmail.com',
+      pass: 'Printer21$'
+    }
+  }));
+  
+    
+       // console.log('The world is going to end today.');
+        let messageOptions = {
+            from: 'ruzgokhman@gmail.com',
+            to: 'ruzgokhman@gmail.com',
+            subject: subject,
+            text:text+"\n\n:מספר טלפון\n"+mail+"אימייל\n"+name+" :שם"
+          };
+        
+          transporter.sendMail(messageOptions, function(error, info) {
+            if (error) {
+              throw error;
+            } else {
+              res.send('Email successfully sent!');
+             
+            }
+          });
+        
+        });
+        
+
+});
+
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
   await Mails.destroy({where: {id},});
