@@ -114,9 +114,10 @@ var a = a.replace("]","")
  var a = a.split(',').map(function(item) {
    //console.log(item)
   return parseInt(item, 10);
-});const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
+});
+  const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
  //   const date = new Date(2021, 07, 14, 00, 30, 0);
-  
+  console.log(date_info)
 console.log(date)
 
  // const date = new Date(b);
