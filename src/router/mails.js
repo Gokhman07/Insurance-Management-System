@@ -4,7 +4,7 @@ const Mails = require("../models/mails");
 const schedule = require('node-schedule');
 var smtpTransport = require('nodemailer-smtp-transport');
 const router = Router();
-/*
+
 router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
@@ -71,7 +71,7 @@ console.log(date)
     
 
 });
-*/
+
 router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
@@ -101,50 +101,6 @@ console.log(date)
     }
   }));
  
-  const job= schedule.scheduleJob(date, function(){
-       // console.log('The world is going to end today.');
-        let messageOptions = {
-            from: 'ruzgokhman@gmail.com',
-            to: to,
-            subject: subject,
-            text: text
-          };
-          //console.log(date)
-        
-          //console.log(userJobs[i].jobName)
-          transporter.sendMail(messageOptions, function(error, info) {
-            if (error) {
-              throw error;
-            } else {
-             res.send('Email successfully sent!');
-            
-             job.cancel( );
-            }
-          });
-        
-        });
-    /* 
-        var jobList = schedule.scheduledJobs;
-   console.log(jobList)   ;
-   var arrry=[];
-        for(jobName in jobList){
-        arrry.push(jobName)
-        //  eval(job1+'.cancel()');
-        }
-      console.log(arrry[arrry.length-1])
-      jobList[arrry[arrry.length-1]].cancel();
-       // console.log(userJobs[0])
-//        const userJobs = {};
-/*
-job2 = schedule.scheduleJob(date, () => {
-  console.log('Do something on scheduled date');
-  //delete userJobs['user A'];*/
-//userJobs["user A"]=3;
-
-//console.log(userJobs["user A"])
-//job2.cancel();
-       
-});
 
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
