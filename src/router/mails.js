@@ -72,34 +72,7 @@ console.log(date)
 
 });
 
-router.post("/send_mail", async (req, res) => {
-    const {  id_pensioner,to,subject,text,date_info} = req.body;
-    status="תהליך"
-var a = date_info.replace("[","")
-var a = a.replace("]","")
-  // const date = new Date(2021, 06, 14, 18, 02, 0);
- var a = a.split(',').map(function(item) {
-   console.log(item)
-  return parseInt(item, 10);
-});
-console.log(a)
-const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
 
-console.log(date)
-
-   await Mails.create({  id_pensioner,subject,text,date: date_info,status});
-    let testAccount = await nodemailer.createTestAccount();
-
-  // create reusable transporter object using the default SMTP transport
-
-  var transporter = nodemailer.createTransport(smtpTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    auth: {
-      user: 'ruzgokhman@gmail.com',
-      pass: 'Printer21$'
-    }
-  }));
  
 
 router.delete("/delete/:id", async (req, res) => {
@@ -254,4 +227,4 @@ router.put('/update_status', async (req, res) => {
 })
 const ok = (data = {}) => ({status: 200, messsage: "OK", data})
 const error = (status = 500, message = 'Request Error', data = {}) => ({status, message, data})
-module.exports = router
+module.exports = router;
