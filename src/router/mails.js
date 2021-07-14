@@ -48,7 +48,7 @@ router.post("/send_mail", async (req, res) => {
             }
           });
         
-        //});
+        });
 
       var jobList = schedule.scheduledJobs;
     
