@@ -59,7 +59,7 @@ router.post("/send_mail", async (req, res) => {
         }
     label=arrry[arrry.length-1];
         
-await Mails.create({  id_pensioner,subject,text,date: date_info,status, });
+ Mails.create({  id_pensioner,subject,text,date: date_info,status, });
 
 });
 
