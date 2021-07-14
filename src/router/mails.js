@@ -116,7 +116,7 @@ router.post("/edit_mail", async (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
 
-  let testAccount = await nodemailer.createTestAccount();
+ // let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
 
