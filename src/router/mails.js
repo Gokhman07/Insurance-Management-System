@@ -81,7 +81,7 @@ router.delete("/delete/:id", async (req, res) => {
 
 });
 router.post("/edit_mail", async (req, res) => {
-    const {  id_pensioner,to,subject,text,date_info} = req.body;
+    const {  id_pensioner,to,subject,text,date_info,id} = req.body;
    // status="תהליך"
   
    // const date = new Date(2021, 04, 23, 23, 28, 0);
@@ -94,10 +94,10 @@ router.post("/edit_mail", async (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
     const data = await Mails.findAll({
-          where: {id: req.body.id,},
+          where: {id: id,},
           attributes : ['label']});
    
-   
+   console.log(data)
   console.log(schedule.scheduledJobs[ data[0]['label']])
   schedule.scheduledJobs[ data[0]['label']].cancel()
   Mails.destroy({where: {id: req.body.id},});
