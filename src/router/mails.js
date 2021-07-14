@@ -72,7 +72,7 @@ console.log(date)
 
 });
 */
-outer.post("/send_mail", async (req, res) => {
+router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
 var a = date_info.replace("[","")
