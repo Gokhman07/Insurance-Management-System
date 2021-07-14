@@ -78,7 +78,7 @@ router.get('/auth', (req, res) => {
 
 router.post("/login", async (req, res) => {
     const exchange = await Admins.findOne({
-        attributes: ['id','type'],
+        attributes: ['id','type','name'],
         where: {
             username: req.body.username,
             password: req.body.password
@@ -95,7 +95,7 @@ router.post("/login", async (req, res) => {
         res.send({
             status: 200, data: {
                 token,
-                login: req.params.username, id: exchange.dataValues.id
+                login: req.params.username, id: exchange.dataValues.id, type: exchange.dataValues.type,name: exchange.dataValues.name,
             }
         });
     } else {
