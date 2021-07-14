@@ -100,7 +100,7 @@ router.post("/edit_mail", async (req, res) => {
    
   console.log(schedule.scheduledJobs[ data[0]['label']])
   schedule.scheduledJobs[ data[0]['label']].cancel()
-  Mails.destroy({where: {id},});
+  Mails.destroy({where: {id: req.body.id},});
 
     
     
