@@ -19,7 +19,7 @@ console.log(a)
 const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
  //   const date = new Date(2021, 07, 14, 00, 30, 0);
   
-  const date = new Date(b);
+ // const date = new Date(b);
 
   
   // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
