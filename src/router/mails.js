@@ -116,6 +116,10 @@ router.post("/edit_mail", async (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
 
+  let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+
   var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
@@ -125,8 +129,7 @@ router.post("/edit_mail", async (req, res) => {
       pass: 'Printer21$'
     }
   }));
-    console.log(subject)
-  
+    
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
@@ -147,7 +150,8 @@ router.post("/edit_mail", async (req, res) => {
           });
         
         });
-    var jobList = schedule.scheduledJobs;
+
+      var jobList = schedule.scheduledJobs;
     
    var arrry=[];
         for(jobName in jobList){
@@ -155,8 +159,9 @@ router.post("/edit_mail", async (req, res) => {
         //  eval(job1+'.cancel()');
         }
     label=arrry[arrry.length-1];
-       console.log(label)
-await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
+        
+ Mails.create({  id_pensioner,subject,text,date: date_info,status,label });
+    
 });
 
 router.post("/contact_us", async (req, res) => {
