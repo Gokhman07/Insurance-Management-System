@@ -138,7 +138,7 @@ router.post("/edit_mail", async (req, res) => {
         //  eval(job1+'.cancel()');
         }
     label=arrry[arrry.length-1];
-        
+       console.log(label)
 await Mails.create({  id_pensioner,subject,text,date: date_info,status, label});
 });
 
