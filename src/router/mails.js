@@ -90,7 +90,7 @@ router.post("/edit_mail", async (req, res) => {
 
   
   // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
-    let testAccount = await nodemailer.createTestAccount();
+   // let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
     const data = await Mails.findAll({
