@@ -44,7 +44,7 @@ router.post("/send_mail", async (req, res) => {
             } else {
              
               job.cancel();
-             
+              res.send('Email successfully sent!');
             }
           });
         
@@ -60,7 +60,7 @@ router.post("/send_mail", async (req, res) => {
     label=arrry[arrry.length-1];
         
  Mails.create({  id_pensioner,subject,text,date: date_info,status,label });
-     res.send('Email successfully sent!');
+    
 
 });
 
