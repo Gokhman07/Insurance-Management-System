@@ -12,13 +12,13 @@ router.post("/send_mail", async (req, res) => {
 var a = a.replace("]","")
   // const date = new Date(2021, 06, 14, 18, 02, 0);
  var a = a.split(',').map(function(item) {
-   console.log(item)
+   //console.log(item)
   return parseInt(item, 10);
-});
-console.log(a)
-const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
+});const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
  //   const date = new Date(2021, 07, 14, 00, 30, 0);
   
+console.log(date)
+
  // const date = new Date(b);
 
   
