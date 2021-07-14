@@ -8,10 +8,18 @@ const router = Router();
 router.post("/send_mail", async (req, res) => {
     const {  id_pensioner,to,subject,text,date_info} = req.body;
     status="תהליך"
-  
+  var a = date_info.replace("[","")
+var a = a.replace("]","")
+  // const date = new Date(2021, 06, 14, 18, 02, 0);
+ var a = a.split(',').map(function(item) {
+   console.log(item)
+  return parseInt(item, 10);
+});
+console.log(a)
+const date = new Date(a[0],a[1],a[2],a[3],a[4],a[5]);
  //   const date = new Date(2021, 07, 14, 00, 30, 0);
   
-  const date = new Date(date_info);
+  const date = new Date(b);
 
   
   // await Mails.create({  id_pensioner,subject,text,date: date_info,status});
