@@ -24,10 +24,10 @@ const Pensioners = sequelize.define("pensioners", {
     type: DataTypes.STRING,
   },
   marital_id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
   },
   id_empl_status: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
   },
 
   occupation: {
