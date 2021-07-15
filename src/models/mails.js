@@ -25,7 +25,9 @@ const Mails = sequelize.define("mails", {
    label: {
     type: DataTypes.STRING,
   },
-
+ to: {
+    type: DataTypes.STRING,
+  },
   
   
 });
