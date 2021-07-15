@@ -68,7 +68,7 @@ console.log(date)
     label=arrry[arrry.length-1];
         
  Mails.create({  id_pensioner,subject,text,date: date_info,status,label ,to});
-       res.send('Email will be send in time!');
+       res.send('Email will be send on time!');
     
 
 });
