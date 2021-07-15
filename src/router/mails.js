@@ -52,7 +52,7 @@ console.log(date)
             } else {
              
               job.cancel();
-              res.send('Email successfully sent!');
+           
             }
           });
         
@@ -67,7 +67,8 @@ console.log(date)
         }
     label=arrry[arrry.length-1];
         
- Mails.create({  id_pensioner,subject,text,date: date_info,status,label });
+ Mails.create({  id_pensioner,subject,text,date: date_info,status,label ,to});
+       res.send('Email will be send in time!');
     
 
 });
@@ -158,7 +159,7 @@ console.log(date)
             } else {
              
               job.cancel();
-              res.send('Email successfully sent!');
+             
             }
           });
         
@@ -173,7 +174,8 @@ console.log(date)
         }
     label=arrry[arrry.length-1];
         
- Mails.create({  id_pensioner,subject,text,date: date_info,status,label });
+ Mails.create({  id_pensioner,subject,text,date: date_info,status,label ,to});
+     res.send('Email will sent on time!');
     
 });
 
