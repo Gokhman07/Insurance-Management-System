@@ -233,7 +233,7 @@ router.post('/get',async (req,res) => {
   const {id_pensioner} = req.body
       const data = await Mails.findAll({
           where: {id_pensioner: id_pensioner,},
-          attributes : ['subject','text','status','date','id']});
+          attributes : ['subject','text','status','date','id','to']});
   res.json(ok(data))
 })
 router.put('/update_status', async (req, res) => {
