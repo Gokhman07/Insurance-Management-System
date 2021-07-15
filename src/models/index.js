@@ -4,7 +4,7 @@
 const Pensioners =require("./pensioners")
 const Marit_statuses =require("./marit_statuses")
 const Empl_stats=require("./empl_stats")
-const Group_admins=require("./group_admins")
+const Group_admins=require("./admins")
 const Childrens=require("./childrens")
 const Couples = require("./couples")
 const Risk_insurances =require("./risk_insurances")
@@ -29,11 +29,6 @@ Plans.belongsTo(Pensioners, { foreignKey: "id_pensioner" });
 //Subcategories.hasMany(Plans, { foreignKey: "id_categor" });
 //Plans.belongsTo(Subcategories, { foreignKey: "id_categor" });
 
-Marit_statuses.hasMany(Pensioners, { foreignKey: "marital_id" });
-Pensioners.belongsTo(Marit_statuses, { foreignKey: "marital_id" });
-
-Empl_stats.hasMany(Pensioners, { foreignKey: "id_empl_status" });
-Pensioners.belongsTo(Empl_stats, { foreignKey: "id_empl_status" });
 
 Group_admins.hasMany(Pensioners, { foreignKey: "group_id" });
 Pensioners.belongsTo(Group_admins, { foreignKey: "group_id" });
