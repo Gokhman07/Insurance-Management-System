@@ -82,7 +82,7 @@ router.post("/get", async (req, res) => {
 		
 	    },
 	);
-	motrgages.push({type:'motrgages'})
+	motrgages.push({type:'mortgages'})
 
 	const family_risks = await Family_risks.findAll({
 	    
