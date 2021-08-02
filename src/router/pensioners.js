@@ -231,7 +231,7 @@ console.log(exchange)
       let messageOptions = {
         from: 'ruzgokhman@gmail.com',
         to: req.body.email,
-        subject: 'סיכום פגישה "עצה טובה"',
+        subject: 'קוד כניסה -עצה טובה',
     
         text: "הקוד שלך לכניסה למערכת \"עצה טובה\"  הוא: "+token.toString()+" . הקוד תקף ל15 דקות"
         
