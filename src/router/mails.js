@@ -32,8 +32,8 @@ console.log(date)
     host: 'smtp.gmail.com',
     port: 465,
     auth: {
-      user: 'ruzgokhman@gmail.com',
-      pass: 'Printer21$'
+      user: 'assettmap@gmail.com',
+      pass: 'Yizchak24'
     }
   }));
     
