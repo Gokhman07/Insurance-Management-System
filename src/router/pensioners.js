@@ -224,12 +224,12 @@ console.log(exchange)
         service: 'gmail',
         host: 'smtp.gmail.com',
         auth: {
-          user: 'ruzgokhman@gmail.com',
-          pass: 'Printer21$'
+          user: 'assettmap@gmail.com',
+          pass: 'Yizchak24'
         }
       }));
       let messageOptions = {
-        from: 'ruzgokhman@gmail.com',
+        from: 'assettmap@gmail.com',
         to: req.body.email,
         subject: 'קוד כניסה -עצה טובה',
     
