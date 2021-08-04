@@ -40,7 +40,7 @@ console.log(date)
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
-            from: 'ruzgokhman@gmail.com',
+            from: 'assettmap@gmail.com',
             to: to,
             subject: subject,
             text: text
@@ -139,15 +139,15 @@ console.log(date)
     host: 'smtp.gmail.com',
     port: 465,
     auth: {
-      user: 'ruzgokhman@gmail.com',
-      pass: 'Printer21$'
+      user: 'assettmap@gmail.com',
+      pass: 'Yizchak24'
     }
   }));
     
     const job = schedule.scheduleJob(date, function(){
        // console.log('The world is going to end today.');
         let messageOptions = {
-            from: 'ruzgokhman@gmail.com',
+            from: 'assettmap@gmail.com',
             to: to,
             subject: subject,
             text: text
@@ -198,16 +198,16 @@ router.post("/contact_us", async (req, res) => {
     host: 'smtp.gmail.com',
     port: 465,
     auth: {
-      user: 'ruzgokhman@gmail.com',
-      pass: 'Printer21$'
+      user: 'assettmap@gmail.com',
+      pass: 'Yizchak24'
     }
   }));
   
     
        // console.log('The world is going to end today.');
         let messageOptions = {
-            from: 'ruzgokhman@gmail.com',
-            to: 'ruzgokhman@gmail.com',
+            from: 'assettmap@gmail.com',
+            to: 'assettmap@gmail.com',
             subject: subject.toString(),
             text:text+"\n\n"+number+" :מספר טלפון\n"+mail+" :אימייל\n"+name+" :שם"
             //text:text.toString()
