@@ -31,6 +31,7 @@ console.log(date)
     service: 'gmail',
     host: 'smtp.gmail.com',
     port: 465,
+     sendmail:true,
     auth: {
       user: 'assettmap@gmail.com',
       pass: 'Yizchak24'
